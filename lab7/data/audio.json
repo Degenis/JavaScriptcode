@@ -1,0 +1,40 @@
+{
+  "category": "Навушники",
+  "items": [
+    {
+      "id": 1,
+      "name": "SoundPro ANC 500",
+      "shortname": "soundpro-anc",
+      "description": "Повнорозмірні навушники з активним шумопоглинанням, 40-годинним акумулятором та Hi-Res Audio. Lorem ipsum dolor sit amet.",
+      "price": 8999
+    },
+    {
+      "id": 2,
+      "name": "BassTrue Wireless",
+      "shortname": "basstrue",
+      "description": "TWS-навушники з глибокими басами, IPX5-захистом та до 8 годин автономної роботи.",
+      "price": 3200
+    },
+    {
+      "id": 3,
+      "name": "SportBuds Pro",
+      "shortname": "sportbuds",
+      "description": "Спортивні навушники з надійною фіксацією, захистом від поту та прозорим режимом для безпеки.",
+      "price": 4500
+    },
+    {
+      "id": 4,
+      "name": "StudioCan HD",
+      "shortname": "studiocan",
+      "description": "Студійні навушники для моніторингу з плоскою АЧХ та роздільністю 24 біт/96 кГц.",
+      "price": 12500
+    },
+    {
+      "id": 5,
+      "name": "KidSafe Wired",
+      "shortname": "kidsafe",
+      "description": "Дитячі навушники з обмеженням гучності до 85 дБ та м'якими амбушюрами. Безпечні та яскраві.",
+      "price": 1299
+    }
+  ]
+}
