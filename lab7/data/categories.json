@@ -1,1 +1,28 @@
-
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Ноутбуки",
+      "shortname": "laptops",
+      "notes": "Широкий вибір ноутбуків для роботи, навчання та розваг. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": 2,
+      "name": "Смартфони",
+      "shortname": "phones",
+      "notes": "Найновіші моделі смартфонів провідних брендів."
+    },
+    {
+      "id": 3,
+      "name": "Навушники",
+      "shortname": "audio",
+      "notes": "Аудіотехніка для справжніх цінителів звуку. Lorem ipsum dolor sit amet."
+    },
+    {
+      "id": 4,
+      "name": "Аксесуари",
+      "shortname": "accessories",
+      "notes": ""
+    }
+  ]
+}
