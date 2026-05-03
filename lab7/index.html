@@ -1,1 +1,792 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechStore — Каталог</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --bg: #0d0d0f;
+      --surface: #16161a;
+      --surface2: #1e1e24;
+      --border: #2a2a35;
+      --accent: #e8ff47;
+      --accent2: #47ffe8;
+      --text: #f0f0f5;
+      --muted: #7a7a90;
+      --danger: #ff4757;
+      --radius: 4px;
+      --font-head: 'Syne', sans-serif;
+      --font-mono: 'Space Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-mono);
+      font-size: 14px;
+      line-height: 1.6;
+      min-height: 100vh;
+      background-image:
+        radial-gradient(ellipse 60% 40% at 80% 10%, rgba(232,255,71,0.04) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 60% at 10% 90%, rgba(71,255,232,0.03) 0%, transparent 60%);
+    }
+
+    /* ─── HEADER ─── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13,13,15,0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 clamp(16px, 5vw, 64px);
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      height: 64px;
+    }
+
+    .logo {
+      font-family: var(--font-head);
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    nav {
+      display: flex;
+      gap: 4px;
+      margin-left: auto;
+    }
+
+    .nav-link {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 6px 14px;
+      border: 1px solid transparent;
+      border-radius: var(--radius);
+      cursor: pointer;
+      background: none;
+      transition: color 0.18s, border-color 0.18s, background 0.18s;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--accent);
+      border-color: var(--accent);
+      background: rgba(232,255,71,0.05);
+    }
+
+    /* ─── HERO / HOME ─── */
+    #home-view {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: clamp(48px, 8vw, 120px) clamp(16px, 5vw, 64px) 80px;
+    }
+
+    .hero-label {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-family: var(--font-head);
+      font-size: clamp(42px, 7vw, 96px);
+      font-weight: 800;
+      line-height: 0.95;
+      letter-spacing: -2px;
+      margin-bottom: 32px;
+    }
+
+    .hero-title em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 480px;
+      margin-bottom: 56px;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent);
+      color: #0d0d0f;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .hero-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(232,255,71,0.25);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      margin-top: 80px;
+      padding-top: 48px;
+      border-top: 1px solid var(--border);
+    }
+
+    .stat-num {
+      font-family: var(--font-head);
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--accent2);
+    }
+
+    .stat-label {
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* ─── CATALOG VIEW ─── */
+    #catalog-view {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 48px clamp(16px, 5vw, 64px) 80px;
+    }
+
+    .catalog-header {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .catalog-title {
+      font-family: var(--font-head);
+      font-size: 40px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .catalog-title span { color: var(--accent); }
+
+    .section-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    /* Category cards */
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .category-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: border-color 0.2s, background 0.2s, transform 0.15s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .category-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s;
+    }
+
+    .category-card:hover {
+      border-color: var(--accent);
+      background: var(--surface2);
+      transform: translateY(-3px);
+    }
+
+    .category-card:hover::before { transform: scaleX(1); }
+
+    .cat-id {
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+      font-family: var(--font-mono);
+    }
+
+    .cat-name {
+      font-family: var(--font-head);
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .cat-notes {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .cat-arrow {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      font-size: 18px;
+      color: var(--muted);
+      transition: color 0.2s, transform 0.2s;
+    }
+
+    .category-card:hover .cat-arrow {
+      color: var(--accent);
+      transform: translate(3px, -3px);
+    }
+
+    /* Specials card */
+    .specials-card {
+      background: linear-gradient(135deg, rgba(232,255,71,0.08) 0%, rgba(71,255,232,0.05) 100%);
+      border-color: rgba(232,255,71,0.3);
+    }
+
+    .specials-card .cat-id { color: var(--accent2); }
+    .specials-card:hover { border-color: var(--accent2); }
+    .specials-card:hover::before { background: var(--accent2); }
+
+    /* ─── ITEMS VIEW ─── */
+    #items-view {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 48px clamp(16px, 5vw, 64px) 80px;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      margin-bottom: 36px;
+      transition: color 0.15s;
+      font-family: var(--font-mono);
+    }
+
+    .back-btn:hover { color: var(--accent); }
+
+    .items-header {
+      margin-bottom: 48px;
+    }
+
+    .items-category-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .items-title {
+      font-family: var(--font-head);
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      line-height: 1;
+    }
+
+    .items-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .item-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.15s;
+      animation: fadeUp 0.35s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .item-card:hover {
+      border-color: var(--border);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+    }
+
+    .item-img-wrap {
+      background: var(--surface2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .item-img-wrap img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      display: block;
+    }
+
+    .item-body {
+      padding: 20px;
+    }
+
+    .item-id {
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .item-name {
+      font-family: var(--font-head);
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .item-desc {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 16px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .item-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .item-price {
+      font-family: var(--font-head);
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .item-price-sub {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .item-buy {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 8px 14px;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+    }
+
+    .item-buy:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #0d0d0f;
+    }
+
+    /* ─── LOADER ─── */
+    .loader {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 13px;
+      padding: 48px 0;
+    }
+
+    .loader-dots {
+      display: flex;
+      gap: 4px;
+    }
+
+    .loader-dots span {
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: blink 1s infinite;
+    }
+
+    .loader-dots span:nth-child(2) { animation-delay: 0.2s; }
+    .loader-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes blink {
+      0%, 80%, 100% { opacity: 0.2; }
+      40% { opacity: 1; }
+    }
+
+    /* ─── ERROR ─── */
+    .error-box {
+      background: rgba(255,71,87,0.08);
+      border: 1px solid rgba(255,71,87,0.3);
+      border-radius: var(--radius);
+      padding: 24px;
+      color: var(--danger);
+      font-size: 13px;
+    }
+
+    /* ─── HIDDEN ─── */
+    .hidden { display: none !important; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px clamp(16px, 5vw, 64px);
+      text-align: center;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 0.05em;
+    }
+
+    /* ─── ITEM ANIMATION DELAYS ─── */
+    .item-card:nth-child(1) { animation-delay: 0.05s; }
+    .item-card:nth-child(2) { animation-delay: 0.1s; }
+    .item-card:nth-child(3) { animation-delay: 0.15s; }
+    .item-card:nth-child(4) { animation-delay: 0.2s; }
+    .item-card:nth-child(5) { animation-delay: 0.25s; }
+    .item-card:nth-child(6) { animation-delay: 0.3s; }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ HEADER ═══ -->
+  <header>
+    <div class="header-inner">
+      <a class="logo" href="index.html">Tech<span>Store</span></a>
+      <nav>
+        <a class="nav-link" href="index.html">Home</a>
+        <button class="nav-link" id="nav-catalog">Catalog</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══ HOME VIEW ═══ -->
+  <section id="home-view">
+    <p class="hero-label">// Ласкаво просимо</p>
+    <h1 class="hero-title">Найкраща<br/>техніка для <em>вас</em></h1>
+    <p class="hero-sub">Широкий асортимент електроніки та аксесуарів. Актуальні ціни, швидка доставка, гарантія якості.</p>
+    <button class="hero-cta" id="hero-catalog-btn">
+      Переглянути каталог →
+    </button>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">4</div>
+        <div class="stat-label">Категорії</div>
+      </div>
+      <div>
+        <div class="stat-num">28</div>
+        <div class="stat-label">Товарів</div>
+      </div>
+      <div>
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Гарантія</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CATALOG VIEW ═══ -->
+  <section id="catalog-view" class="hidden">
+    <div class="catalog-header">
+      <h2 class="catalog-title">Ката<span>лог</span></h2>
+    </div>
+    <p class="section-label">// Оберіть категорію</p>
+    <div id="categories-container">
+      <div class="loader">
+        <div class="loader-dots"><span></span><span></span><span></span></div>
+        Завантаження категорій…
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ITEMS VIEW ═══ -->
+  <section id="items-view" class="hidden">
+    <button class="back-btn" id="back-btn">← Назад до каталогу</button>
+    <div class="items-header">
+      <p class="items-category-label">// Категорія</p>
+      <h2 class="items-title" id="items-title">—</h2>
+    </div>
+    <div id="items-container">
+      <div class="loader">
+        <div class="loader-dots"><span></span><span></span><span></span></div>
+        Завантаження товарів…
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 TechStore — Лабораторна робота. Ajax + JSON.</p>
+  </footer>
+
+  <script>
+    // ═══════════════════════════════════════
+    //  VIEWS
+    // ═══════════════════════════════════════
+    const views = {
+      home:    document.getElementById('home-view'),
+      catalog: document.getElementById('catalog-view'),
+      items:   document.getElementById('items-view'),
+    };
+
+    function showView(name) {
+      Object.values(views).forEach(v => v.classList.add('hidden'));
+      views[name].classList.remove('hidden');
+
+      // Update active nav
+      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+      if (name === 'catalog' || name === 'items') {
+        document.getElementById('nav-catalog').classList.add('active');
+      }
+    }
+
+    // ═══════════════════════════════════════
+    //  AJAX FETCH HELPER
+    // ═══════════════════════════════════════
+    function fetchJSON(url) {
+      return fetch(url).then(res => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}: ${url}`);
+        return res.json();
+      });
+    }
+
+    // ═══════════════════════════════════════
+    //  LOAD CATEGORIES
+    // ═══════════════════════════════════════
+    let categoriesCache = null;
+
+    function loadCatalog() {
+      showView('catalog');
+
+      if (categoriesCache) {
+        renderCategories(categoriesCache);
+        return;
+      }
+
+      const container = document.getElementById('categories-container');
+      container.innerHTML = `
+        <div class="loader">
+          <div class="loader-dots"><span></span><span></span><span></span></div>
+          Завантаження категорій…
+        </div>`;
+
+      fetchJSON('data/categories.json')
+        .then(data => {
+          categoriesCache = data.categories;
+          renderCategories(categoriesCache);
+        })
+        .catch(err => {
+          container.innerHTML = `<div class="error-box">Помилка завантаження: ${err.message}</div>`;
+        });
+    }
+
+    function renderCategories(categories) {
+      const container = document.getElementById('categories-container');
+
+      let html = '<div class="categories-grid">';
+
+      categories.forEach(cat => {
+        const notes = cat.notes
+          ? `<p class="cat-notes">${cat.notes}</p>`
+          : `<p class="cat-notes" style="font-style:italic;opacity:0.4">Без приміток</p>`;
+
+        html += `
+          <a class="category-card" href="#" data-shortname="${cat.shortname}" data-name="${cat.name}">
+            <div class="cat-id">cat_${String(cat.id).padStart(2, '0')}</div>
+            <div class="cat-name">${cat.name}</div>
+            ${notes}
+            <span class="cat-arrow">↗</span>
+          </a>`;
+      });
+
+      // Specials card
+      html += `
+        <a class="category-card specials-card" href="#" data-shortname="specials" data-name="Specials">
+          <div class="cat-id" style="color:var(--accent2)">special</div>
+          <div class="cat-name">✦ Specials</div>
+          <p class="cat-notes">Випадкова категорія — щоразу щось нове!</p>
+          <span class="cat-arrow">↗</span>
+        </a>`;
+
+      html += '</div>';
+      container.innerHTML = html;
+
+      // Bind clicks
+      container.querySelectorAll('.category-card').forEach(card => {
+        card.addEventListener('click', e => {
+          e.preventDefault();
+          const shortname = card.dataset.shortname;
+          const name = card.dataset.name;
+
+          if (shortname === 'specials') {
+            const rand = categories[Math.floor(Math.random() * categories.length)];
+            loadItems(rand.shortname, rand.name);
+          } else {
+            loadItems(shortname, name);
+          }
+        });
+      });
+    }
+
+    // ═══════════════════════════════════════
+    //  LOAD ITEMS
+    // ═══════════════════════════════════════
+    function loadItems(shortname, displayName) {
+      showView('items');
+
+      const titleEl   = document.getElementById('items-title');
+      const container = document.getElementById('items-container');
+
+      titleEl.textContent = displayName;
+      container.innerHTML = `
+        <div class="loader">
+          <div class="loader-dots"><span></span><span></span><span></span></div>
+          Завантаження товарів…
+        </div>`;
+
+      fetchJSON(`data/${shortname}.json`)
+        .then(data => {
+          titleEl.textContent = data.category || displayName;
+          renderItems(data.items, container);
+        })
+        .catch(err => {
+          container.innerHTML = `<div class="error-box">Помилка завантаження: ${err.message}</div>`;
+        });
+    }
+
+    function renderItems(items, container) {
+      const colors = ['b5b5b5', 'a0c4ff', 'caffbf', 'ffd6a5', 'ffadad', 'bdb2ff'];
+
+      let html = '<div class="items-grid">';
+
+      items.forEach((item, i) => {
+        const color = colors[i % colors.length];
+        const imgUrl = `https://placehold.co/160x160/${color}/222222?text=${encodeURIComponent(item.shortname)}`;
+        const price = Number(item.price).toLocaleString('uk-UA');
+
+        html += `
+          <article class="item-card">
+            <div class="item-img-wrap">
+              <img src="${imgUrl}" alt="${item.name}" width="160" height="160" loading="lazy" />
+            </div>
+            <div class="item-body">
+              <div class="item-id">id_${String(item.id).padStart(3,'0')}</div>
+              <h3 class="item-name">${item.name}</h3>
+              <p class="item-desc">${item.description}</p>
+              <div class="item-footer">
+                <div>
+                  <div class="item-price">${price} ₴</div>
+                  <div class="item-price-sub">Ціна за одиницю</div>
+                </div>
+                <button class="item-buy">Купити</button>
+              </div>
+            </div>
+          </article>`;
+      });
+
+      html += '</div>';
+      container.innerHTML = html;
+    }
+
+    // ═══════════════════════════════════════
+    //  EVENT LISTENERS
+    // ═══════════════════════════════════════
+    document.getElementById('nav-catalog').addEventListener('click', e => {
+      e.preventDefault();
+      loadCatalog();
+    });
+
+    document.getElementById('hero-catalog-btn').addEventListener('click', () => {
+      loadCatalog();
+    });
+
+    document.getElementById('back-btn').addEventListener('click', () => {
+      showView('catalog');
+    });
+
+    // Home link
+    document.querySelector('a.logo').addEventListener('click', e => {
+      // Allow default (page reload = home)
+    });
+  </script>
+</body>
+</html>
