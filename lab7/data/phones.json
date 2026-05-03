@@ -1,0 +1,47 @@
+{
+  "category": "Смартфони",
+  "items": [
+    {
+      "id": 1,
+      "name": "Nova X Pro",
+      "shortname": "nova-x-pro",
+      "description": "Флагманський смартфон із камерою 200 МП, AMOLED-дисплеєм 6.7\" та зарядкою 120 Вт. Lorem ipsum dolor sit amet.",
+      "price": 35999
+    },
+    {
+      "id": 2,
+      "name": "Pixel Lite 5G",
+      "shortname": "pixel-lite",
+      "description": "Компактний смартфон із чистою Android та відмінною камерою для повсякденного використання.",
+      "price": 18500
+    },
+    {
+      "id": 3,
+      "name": "FoldMax Z",
+      "shortname": "foldmax-z",
+      "description": "Складаний смартфон із гнучким дисплеєм. Поєднує зручність телефону та планшета в одному пристрої.",
+      "price": 72000
+    },
+    {
+      "id": 4,
+      "name": "EcoPhone Green",
+      "shortname": "ecophone",
+      "description": "Екологічний смартфон із корпусом із перероблених матеріалів та акумулятором 6000 мАг.",
+      "price": 12999
+    },
+    {
+      "id": 5,
+      "name": "GamerPhone Ultra",
+      "shortname": "gamer-phone",
+      "description": "Смартфон для мобільних геймерів із дисплеєм 165 Гц, активним охолодженням та тригерними кнопками.",
+      "price": 29900
+    },
+    {
+      "id": 6,
+      "name": "MiniPhone SE",
+      "shortname": "mini-se",
+      "description": "Невеликий зручний смартфон із потужним процесором у компактному корпусі 5.4\".",
+      "price": 11500
+    }
+  ]
+}
