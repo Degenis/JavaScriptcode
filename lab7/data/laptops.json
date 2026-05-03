@@ -1,0 +1,40 @@
+{
+  "category": "Ноутбуки",
+  "items": [
+    {
+      "id": 1,
+      "name": "ProBook Ultra 15",
+      "shortname": "probook-ultra",
+      "description": "Потужний ноутбук для професіоналів із процесором Intel Core i7, 16 ГБ RAM та SSD 512 ГБ. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "price": 42999
+    },
+    {
+      "id": 2,
+      "name": "SlimNote Air",
+      "shortname": "slim-air",
+      "description": "Ультратонкий та легкий ноутбук вагою лише 1.2 кг. Ідеально підходить для студентів та мандрівників.",
+      "price": 28500
+    },
+    {
+      "id": 3,
+      "name": "GameForce X17",
+      "shortname": "gameforce-x17",
+      "description": "Ігровий ноутбук із RTX 4060, дисплеєм 144 Гц та системою охолодження TurboFan. Lorem ipsum dolor sit amet.",
+      "price": 67800
+    },
+    {
+      "id": 4,
+      "name": "CreativeStudio Pro",
+      "shortname": "creative-pro",
+      "description": "Ноутбук для дизайнерів та відеографів із OLED-дисплеєм 4K та широким кольоровим охопленням.",
+      "price": 55000
+    },
+    {
+      "id": 5,
+      "name": "BudgetBook 14",
+      "shortname": "budget-14",
+      "description": "Доступний ноутбук для повсякденних завдань: перегляду сайтів, роботи з документами та відеодзвінків.",
+      "price": 14999
+    }
+  ]
+}
