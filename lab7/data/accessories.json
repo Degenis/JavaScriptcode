@@ -1,0 +1,47 @@
+{
+  "category": "Аксесуари",
+  "items": [
+    {
+      "id": 1,
+      "name": "PowerHub 10000",
+      "shortname": "powerhub",
+      "description": "Павербанк 10000 мАг із двома USB-A, USB-C та швидкою зарядкою 22.5 Вт. Компактний та легкий.",
+      "price": 1899
+    },
+    {
+      "id": 2,
+      "name": "MagCharge Stand",
+      "shortname": "magcharge",
+      "description": "Магнітна бездротова зарядна підставка 15 Вт для смартфонів, навушників та смарт-годинників.",
+      "price": 1250
+    },
+    {
+      "id": 3,
+      "name": "ProBag Laptop Sleeve",
+      "shortname": "probag",
+      "description": "Захисний чохол для ноутбуків 13-15\" із водовідштовхувальним покриттям та кишенями для аксесуарів.",
+      "price": 899
+    },
+    {
+      "id": 4,
+      "name": "MechKey TKL",
+      "shortname": "mechkey",
+      "description": "Компактна механічна клавіатура без цифрового блоку із перемикачами Brown та підсвіткою RGB.",
+      "price": 3600
+    },
+    {
+      "id": 5,
+      "name": "PrecisionMouse X",
+      "shortname": "precision-mouse",
+      "description": "Ергономічна миша з роздільністю до 16000 DPI, 6 програмованими кнопками та тихим кліком.",
+      "price": 1750
+    },
+    {
+      "id": 6,
+      "name": "UltraHub USB-C",
+      "shortname": "ultrahub",
+      "description": "USB-C хаб 8-в-1: HDMI 4K, SD/microSD, 3×USB-A, USB-C PD 100 Вт та Ethernet 1 Гбіт.",
+      "price": 2100
+    }
+  ]
+}
