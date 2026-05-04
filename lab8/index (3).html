@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Лабораторна робота №8</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ════════════ NAVIGATION ════════════ -->
+<nav>
+  <div class="nav-logo">⚡ WebLab</div>
+
+  <!-- Large: icon + label menu -->
+  <ul class="nav-menu">
+    <li><a href="#carousel" class="active"><span class="icon">🏠</span>Головна</a></li>
+    <li><a href="#large-section"><span class="icon">🖼️</span>Галерея</a></li>
+    <li><a href="#medium-section"><span class="icon">📱</span>Мобільно</a></li>
+    <li><a href="#about"><span class="icon">ℹ️</span>Про нас</a></li>
+    <li><a href="#contact"><span class="icon">✉️</span>Контакти</a></li>
+  </ul>
+
+  <!-- Medium: hamburger button -->
+  <button class="hamburger" id="hamburger" aria-label="Меню" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile dropdown menu -->
+<ul class="mobile-menu" id="mobileMenu">
+  <li><a href="#carousel"><span class="icon">🏠</span>Головна</a></li>
+  <li><a href="#large-section"><span class="icon">🖼️</span>Галерея</a></li>
+  <li><a href="#medium-section"><span class="icon">📱</span>Мобільно</a></li>
+  <li><a href="#about"><span class="icon">ℹ️</span>Про нас</a></li>
+  <li><a href="#contact"><span class="icon">✉️</span>Контакти</a></li>
+</ul>
+
+<!-- ════════════ MAIN CONTENT ════════════ -->
+<main>
+
+  <!-- CAROUSEL -->
+  <section id="carousel">
+    <h2>🎞️ Карусель слайдів</h2>
+    <div class="carousel-wrap">
+      <div class="carousel-track" id="track">
+
+        <div class="slide">
+          <img src="https://placehold.co/1200x450/1a1f35/e8c547?text=Слайд+1+—+Природа" alt="Слайд 1">
+          <div class="slide-caption">🌿 Краса природи навколо нас</div>
+        </div>
+
+        <div class="slide">
+          <img src="https://placehold.co/1200x450/1f351a/4fc3f7?text=Слайд+2+—+Технології" alt="Слайд 2">
+          <div class="slide-caption">💻 Технології майбутнього</div>
+        </div>
+
+        <div class="slide">
+          <img src="https://placehold.co/1200x450/35201a/e87447?text=Слайд+3+—+Архітектура" alt="Слайд 3">
+          <div class="slide-caption">🏛️ Архітектурні шедеври</div>
+        </div>
+
+        <div class="slide">
+          <img src="https://placehold.co/1200x450/2a1a35/c47fe8?text=Слайд+4+—+Мистецтво" alt="Слайд 4">
+          <div class="slide-caption">🎨 Мистецтво без кордонів</div>
+        </div>
+
+      </div>
+
+      <button class="carousel-btn prev" id="prevBtn">&#8249;</button>
+      <button class="carousel-btn next" id="nextBtn">&#8250;</button>
+    </div>
+    <div class="carousel-dots" id="dots"></div>
+  </section>
+
+  <!-- LARGE ONLY IMAGES -->
+  <section id="large-section" class="large-only">
+    <span class="badge badge-large">тільки Large ≥768px</span>
+    <h2>🖥️ Зображення для великих екранів</h2>
+    <div class="img-grid">
+      <img src="https://placehold.co/400x300/1a2535/4fc3f7?text=Large+1" alt="Large 1">
+      <img src="https://placehold.co/400x300/251a35/c47fe8?text=Large+2" alt="Large 2">
+      <img src="https://placehold.co/400x300/351a1a/e87447?text=Large+3" alt="Large 3">
+    </div>
+  </section>
+
+  <!-- MEDIUM ONLY IMAGES -->
+  <section id="medium-section" class="medium-only">
+    <span class="badge badge-medium">тільки Medium &lt;768px</span>
+    <h2>📱 Зображення для мобільних</h2>
+    <div class="img-grid">
+      <img src="https://placehold.co/400x300/1a3525/e8c547?text=Mobile+1" alt="Mobile 1">
+      <img src="https://placehold.co/400x300/35251a/4fc3f7?text=Mobile+2" alt="Mobile 2">
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>ℹ️ Про роботу</h2>
+    <p class="text-muted">
+      Ця сторінка демонструє адаптивний дизайн із застосуванням чистого HTML, CSS та JavaScript
+      без використання фреймворків. Реалізовано навігаційне меню з іконками для великих екранів
+      та гамбургер-меню для малих, карусель з автоматичною зміною слайдів та окремі блоки
+      зображень для різних розмірів екрану.
+    </p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>✉️ Контакти</h2>
+    <p class="text-muted">
+      Лабораторна робота №8 — JavaScript візуальні ефекти.<br>
+      Дисципліна: Веб-технології.
+    </p>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
