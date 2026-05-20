@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Лабораторна робота №2</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <h1>Лабораторна робота №2</h1>
+  <p>Об'єктно-орієнтоване програмування у JavaScript</p>
+</header>
+
+<div class="console">
+  <div class="console-bar">
+    <div class="dot dot-r"></div>
+    <div class="dot dot-y"></div>
+    <div class="dot dot-g"></div>
+    <span class="console-label">browser console — lab2.js</span>
+  </div>
+  <div id="output"></div>
+  <div class="input-row">
+    <span class="chevron">&gt;&gt;</span>
+    <input id="cmd" type="text" autocomplete="off" spellcheck="false"
+           placeholder='наприклад: truck1.trip()' />
+    <button id="run-btn">RUN</button>
+  </div>
+</div>
+
+<div class="tests">
+  <h2>Швидкі тести</h2>
+  <div class="chips" id="chips"></div>
+</div>
+
+<script src="lab2.js"></script>
+<script src="ui.js"></script>
+</body>
+</html>
