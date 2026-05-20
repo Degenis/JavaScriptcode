@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Лови квадрат — Лаб. №5</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="hud">
+    <div class="hud-item">
+      <span class="hud-label">score</span>
+      <span class="hud-val" id="score">0</span>
+    </div>
+    <div class="hud-item">
+      <span class="hud-label">time left for click</span>
+      <span class="hud-val" id="timer">3</span>
+    </div>
+  </div>
+
+  <div id="arena">
+    <div id="square"></div>
+
+    <div id="overlay" class="overlay">
+      <div class="overlay-box">
+        <p class="overlay-title" id="overlayTitle">ЛОВИ КВАДРАТ!</p>
+        <p class="overlay-sub" id="overlaySub">Натискай на квадрат до того, як час вийде.<br>Промах — скидання рахунку.</p>
+        <p class="overlay-score hidden" id="overlayScore"></p>
+        <button id="startBtn">▶ СТАРТ</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
