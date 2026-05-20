@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Лабораторна робота №1</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <h1>Лабораторна робота №1</h1>
+  <p>Розв'язання прямокутного трикутника · JavaScript · console</p>
+</header>
+
+<svg class="triangle-svg" width="180" height="140" viewBox="0 0 180 140"
+     fill="none" xmlns="http://www.w3.org/2000/svg">
+  <polygon points="10,125 170,125 10,10"
+           stroke="#00e5ff" stroke-width="1.5" fill="rgba(0,229,255,0.04)"/>
+  <rect x="10" y="109" width="16" height="16"
+        stroke="#00e5ff" stroke-width="1" fill="none"/>
+  <text x="83" y="139" fill="#6c7a9c" font-family="monospace" font-size="12">c</text>
+  <text x="0"  y="70"  fill="#6c7a9c" font-family="monospace" font-size="12">a</text>
+  <text x="88" y="120" fill="#6c7a9c" font-family="monospace" font-size="12">b</text>
+  <text x="152" y="122" fill="#f9e2af" font-family="monospace" font-size="11">β</text>
+  <text x="16"  y="24"  fill="#f9e2af" font-family="monospace" font-size="11">α</text>
+</svg>
+
+<div class="console">
+  <div class="console-bar">
+    <div class="dot dot-r"></div>
+    <div class="dot dot-y"></div>
+    <div class="dot dot-g"></div>
+    <span class="console-label">browser console — triangle.js</span>
+  </div>
+  <div id="output"></div>
+  <div class="input-row">
+    <span class="chevron">&gt;&gt;</span>
+    <input id="cmd" type="text" autocomplete="off" spellcheck="false"
+           placeholder='triangle(7, "leg", 18, "hypotenuse")' />
+    <button id="run-btn">RUN</button>
+  </div>
+</div>
+
+<div class="tests">
+  <h2>Швидкі тести</h2>
+  <div class="chips" id="chips"></div>
+</div>
+
+<script src="triangle.js"></script>
+<script src="ui.js"></script>
+</body>
+</html>
