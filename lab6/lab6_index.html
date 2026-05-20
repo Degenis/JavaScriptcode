@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lights Out — Лаб. №6</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="scanlines"></div>
+
+  <div class="container">
+    <header class="header">
+      <h1 class="title">LIGHTS<br><span>OUT</span></h1>
+      <p class="subtitle">Вимкни всі ліхтарі</p>
+    </header>
+
+    <div class="meta-row">
+      <div class="meta-chip">
+        <span class="meta-label">Рівень</span>
+        <span class="meta-val" id="levelName">A</span>
+      </div>
+      <div class="meta-chip">
+        <span class="meta-label">Кроків</span>
+        <span class="meta-val" id="moveCount">0</span>
+      </div>
+      <div class="meta-chip">
+        <span class="meta-label">Мін. кроків</span>
+        <span class="meta-val" id="minMoves">7</span>
+      </div>
+    </div>
+
+    <div class="grid-wrap">
+      <div class="grid" id="grid"></div>
+    </div>
+
+    <div id="winBanner" class="win-banner hidden">
+      <span class="win-icon">🏆</span>
+      <span class="win-text">Перемога!</span>
+      <span class="win-sub" id="winSub"></span>
+    </div>
+
+    <div class="controls">
+      <button class="btn btn-reset" id="resetBtn">↺ Перезапустити</button>
+      <div class="level-btns">
+        <button class="btn btn-level active" data-level="a">A</button>
+        <button class="btn btn-level" data-level="b">B</button>
+        <button class="btn btn-level" data-level="c">C</button>
+      </div>
+    </div>
+
+    <div class="hint">
+      <p>Натисни на клітинку — вона та сусіди зміняться. Вимкни всі!</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
