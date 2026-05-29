@@ -240,12 +240,12 @@
       "name": "Україна",
       "icon": "🇺🇦",
       "description": "Карпатські гори, Чорне море, козацька спадщина та гостинність.",
-      "image": "https://images.unsplash.com/photo-1580913428735-bd3c269d6a82?w=600&q=80",
+      "image": "https://i-d-a.kz/wp-content/uploads/2026/03/ukraina1.png",
       "destinations": [
         {
           "id": "lviv",
           "name": "Львів",
-          "image": "https://images.unsplash.com/photo-1560969184-10fe8719e047?w=600&q=80",
+          "image": "https://ukr-prokat.com/wp-content/uploads/2020/07/lviv.jpg",
           "rating": 4.9,
           "price": "від $200",
           "duration": "3 дні",
@@ -255,7 +255,7 @@
         {
           "id": "carpathians",
           "name": "Карпати",
-          "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/b/ba/%D0%A0%D0%B0%D0%BD%D0%BE%D0%BA_%D0%BD%D0%B0_%D0%9A%D1%83%D0%BA%D1%83%D0%BB%D1%96.jpg",
           "rating": 4.8,
           "price": "від $150",
           "duration": "5 днів",
@@ -265,7 +265,7 @@
         {
           "id": "odessa",
           "name": "Одеса",
-          "image": "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=600&q=80",
+          "image": "https://travel-al.com.ua/wp-content/uploads/2020/03/2000-2.jpg",
           "rating": 4.7,
           "price": "від $180",
           "duration": "4 дні",
@@ -275,7 +275,7 @@
         {
           "id": "kyiv",
           "name": "Київ",
-          "image": "https://images.unsplash.com/photo-1571104508999-893933ded431?w=600&q=80",
+          "image": "https://portalhistoryua.com/wp-content/uploads/2024/05/majdan-nezalezhnosti-v-kyyevi-glib-albovskyj-unsplash-1024x640.jpg",
           "rating": 4.8,
           "price": "від $120",
           "duration": "3 дні",
